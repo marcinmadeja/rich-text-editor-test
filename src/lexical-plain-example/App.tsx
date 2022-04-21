@@ -1,5 +1,6 @@
-import "./styles.css";
+import { Link } from "react-router-dom";
 import Editor from "./Editor";
+import "./styles.css";
 
 export default function App() {
   return (
@@ -11,13 +12,9 @@ export default function App() {
         <h2>Other Examples</h2>
         <ul>
           <li>
-            <a
-              href="https://codesandbox.io/s/lexical-rich-text-example-5tncvy"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <Link to="/">
               Rich text example
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
