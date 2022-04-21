@@ -18,6 +18,8 @@ import LexicalMarkdownShortcutPlugin from "@lexical/react/LexicalMarkdownShortcu
 import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 import CodeHighlightPlugin from "./plugins/CodeHighlightPlugin";
 import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
+import MyCustomAutoFocusPlugin from "./plugins/MyCustomAutoFocusPlugin";
+import { ShowEditorState } from "./ShowEditorState";
 
 function Placeholder() {
   return <div className="editor-placeholder">Enter some rich text...</div>;
@@ -58,15 +60,18 @@ export default function Editor() {
           />
           <HistoryPlugin />
           <TreeViewPlugin />
-          <AutoFocusPlugin />
+          {/* <AutoFocusPlugin /> */}
+          <MyCustomAutoFocusPlugin />
           <CodeHighlightPlugin />
-          <ListPlugin />
           <LinkPlugin />
-          <AutoLinkPlugin />
-          <ListMaxIndentLevelPlugin maxDepth={7} />
+          <AutoLinkPlugin /> {/* Add autolink for email and URL */}
+          <ListPlugin />
+          <ListMaxIndentLevelPlugin maxDepth={2} />
           <LexicalMarkdownShortcutPlugin />
         </div>
       </div>
+
+      <ShowEditorState />
     </LexicalComposer>
   );
 }
